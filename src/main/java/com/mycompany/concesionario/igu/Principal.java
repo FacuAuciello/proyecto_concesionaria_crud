@@ -106,7 +106,14 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAltaAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAltaAutoActionPerformed
-        // TODO add your handling code here:
+       try {
+        AltaAutomoviles alta = new AltaAutomoviles();
+        alta.setLocationRelativeTo(null);
+        alta.setVisible(true);
+    } catch (Exception e) {
+        e.printStackTrace();
+        javax.swing.JOptionPane.showMessageDialog(this, "Error al abrir: " + e.getMessage());
+    }
     }//GEN-LAST:event_btnAltaAutoActionPerformed
 
 

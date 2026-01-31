@@ -1,18 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package com.mycompany.concesionario.igu;
 
-/**
- *
- * @author faacu
- */
+import com.mycompany.concesionario.logica.Controladora;
+
 public class AltaAutomoviles extends javax.swing.JFrame {
 
-    /**
-     * Creates new form AltaAutomoviles
-     */
+    Controladora control = new Controladora();
+    
     public AltaAutomoviles() {
         initComponents();
     }
@@ -30,19 +24,19 @@ public class AltaAutomoviles extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtMarca = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtModeloo = new javax.swing.JTextField();
         txtModelo = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        txtMarcaa = new javax.swing.JTextField();
         txtKms = new javax.swing.JLabel();
         txtMotor = new javax.swing.JLabel();
         txtPatente = new javax.swing.JLabel();
         txtColor = new javax.swing.JLabel();
         txtCantPuertas = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
+        txtCantPuertass = new javax.swing.JTextField();
+        txtPatentee = new javax.swing.JTextField();
+        txtColorr = new javax.swing.JTextField();
+        txtKmss = new javax.swing.JTextField();
+        txtMotorr = new javax.swing.JTextField();
         btnAgregar = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
 
@@ -56,12 +50,12 @@ public class AltaAutomoviles extends javax.swing.JFrame {
         txtMarca.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtMarca.setText("Marca:");
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtModeloo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         txtModelo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtModelo.setText("Modelo:");
 
-        jTextField8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtMarcaa.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         txtKms.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtKms.setText("Kms:");
@@ -78,21 +72,37 @@ public class AltaAutomoviles extends javax.swing.JFrame {
         txtCantPuertas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtCantPuertas.setText("Cant.Puertas:");
 
-        jTextField9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtCantPuertass.setColumns(2);
+        txtCantPuertass.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtCantPuertass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCantPuertassActionPerformed(evt);
+            }
+        });
 
-        jTextField10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtPatentee.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jTextField11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtColorr.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jTextField12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtKmss.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jTextField13.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtMotorr.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         btnAgregar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnAgregar.setText("Agregar");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
 
         btnLimpiar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -106,32 +116,32 @@ public class AltaAutomoviles extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(txtCantPuertas)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtCantPuertass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(txtKms)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtKmss, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(txtModelo)
                                         .addComponent(txtMarca))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(txtMarcaa, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtModeloo, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(txtMotor)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtMotorr, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtPatente)
                                     .addComponent(txtColor))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(txtColorr, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtPatentee, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(88, 88, 88)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -158,30 +168,30 @@ public class AltaAutomoviles extends javax.swing.JFrame {
                 .addGap(73, 73, 73)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtMarca)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtMarcaa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtModelo)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtModeloo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtKms)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtKmss, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtMotor)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtMotorr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtPatente)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPatentee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtColor)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtColorr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCantPuertass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtCantPuertas))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -204,6 +214,34 @@ public class AltaAutomoviles extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtCantPuertassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantPuertassActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCantPuertassActionPerformed
+
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        
+     String marca = txtMarcaa.getText();
+     String modelo = txtModeloo.getText();
+     int kms = Integer.parseInt(txtKmss.getText());
+     String motor = txtMotorr.getText();
+     String patente = txtPatentee.getText();
+     String color = txtColorr.getText();
+     int cantidadPuertas = Integer.parseInt(txtCantPuertass.getText());
+
+    control.agregarAutomovil(marca, modelo, kms, motor, patente, color, cantidadPuertas);
+    }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        txtMarca.setText("");
+        txtModelo.setText("");
+        txtKmss.setText("");
+        txtMotorr.setText("");
+        txtPatentee.setText("");
+        txtColorr.setText("");
+        txtCantPuertass.setText("");
+        
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
@@ -211,19 +249,19 @@ public class AltaAutomoviles extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JLabel txtCantPuertas;
+    private javax.swing.JTextField txtCantPuertass;
     private javax.swing.JLabel txtColor;
+    private javax.swing.JTextField txtColorr;
     private javax.swing.JLabel txtKms;
+    private javax.swing.JTextField txtKmss;
     private javax.swing.JLabel txtMarca;
+    private javax.swing.JTextField txtMarcaa;
     private javax.swing.JLabel txtModelo;
+    private javax.swing.JTextField txtModeloo;
     private javax.swing.JLabel txtMotor;
+    private javax.swing.JTextField txtMotorr;
     private javax.swing.JLabel txtPatente;
+    private javax.swing.JTextField txtPatentee;
     // End of variables declaration//GEN-END:variables
 }

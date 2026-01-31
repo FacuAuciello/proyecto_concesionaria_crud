@@ -1,3 +1,10 @@
 C:\Users\faacu\OneDrive\Documentos\Facu\Programacion autodidacta\java todocode\2_PROYECTO concesionario con crud\concesionario\src\main\java\com\mycompany\concesionario\logica\Automovil.java
+C:\Users\faacu\OneDrive\Documentos\Facu\Programacion autodidacta\java todocode\2_PROYECTO concesionario con crud\concesionario\src\main\java\com\mycompany\concesionario\persistencia\exceptions\NonexistentEntityException.java
+C:\Users\faacu\OneDrive\Documentos\Facu\Programacion autodidacta\java todocode\2_PROYECTO concesionario con crud\concesionario\src\main\java\com\mycompany\concesionario\logica\Controladora.java
+C:\Users\faacu\OneDrive\Documentos\Facu\Programacion autodidacta\java todocode\2_PROYECTO concesionario con crud\concesionario\src\main\java\com\mycompany\concesionario\persistencia\exceptions\IllegalOrphanException.java
 C:\Users\faacu\OneDrive\Documentos\Facu\Programacion autodidacta\java todocode\2_PROYECTO concesionario con crud\concesionario\src\main\java\com\mycompany\concesionario\igu\Principal.java
+C:\Users\faacu\OneDrive\Documentos\Facu\Programacion autodidacta\java todocode\2_PROYECTO concesionario con crud\concesionario\src\main\java\com\mycompany\concesionario\persistencia\AutomovilJpaController.java
+C:\Users\faacu\OneDrive\Documentos\Facu\Programacion autodidacta\java todocode\2_PROYECTO concesionario con crud\concesionario\src\main\java\com\mycompany\concesionario\igu\AltaAutomoviles.java
 C:\Users\faacu\OneDrive\Documentos\Facu\Programacion autodidacta\java todocode\2_PROYECTO concesionario con crud\concesionario\src\main\java\com\mycompany\concesionario\Concesionario.java
+C:\Users\faacu\OneDrive\Documentos\Facu\Programacion autodidacta\java todocode\2_PROYECTO concesionario con crud\concesionario\src\main\java\com\mycompany\concesionario\persistencia\ControladoraPersistencia.java
+C:\Users\faacu\OneDrive\Documentos\Facu\Programacion autodidacta\java todocode\2_PROYECTO concesionario con crud\concesionario\src\main\java\com\mycompany\concesionario\persistencia\exceptions\PreexistingEntityException.java

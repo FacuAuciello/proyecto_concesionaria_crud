@@ -1,4 +1,15 @@
-com\mycompany\concesionario\Concesionario.class
-com\mycompany\concesionario\igu\Principal.class
 com\mycompany\concesionario\logica\Automovil.class
 com\mycompany\concesionario\igu\Principal$1.class
+com\mycompany\concesionario\persistencia\exceptions\PreexistingEntityException.class
+com\mycompany\concesionario\igu\AltaAutomoviles.class
+com\mycompany\concesionario\logica\Controladora.class
+com\mycompany\concesionario\persistencia\AutomovilJpaController.class
+com\mycompany\concesionario\igu\AltaAutomoviles$2.class
+com\mycompany\concesionario\logica\Automovil_.class
+com\mycompany\concesionario\persistencia\ControladoraPersistencia.class
+com\mycompany\concesionario\persistencia\exceptions\IllegalOrphanException.class
+com\mycompany\concesionario\igu\AltaAutomoviles$1.class
+com\mycompany\concesionario\Concesionario.class
+com\mycompany\concesionario\igu\AltaAutomoviles$3.class
+com\mycompany\concesionario\igu\Principal.class
+com\mycompany\concesionario\persistencia\exceptions\NonexistentEntityException.class
