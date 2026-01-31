@@ -42,6 +42,11 @@ public class Principal extends javax.swing.JFrame {
 
         btnConsulta.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnConsulta.setText("Consulta - Edicion - Baja");
+        btnConsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultaActionPerformed(evt);
+            }
+        });
 
         btnSalir.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnSalir.setText("Salir");
@@ -63,7 +68,7 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -82,7 +87,7 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(74, 74, 74)
                         .addComponent(jLabel1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addComponent(btnAltaAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
                 .addComponent(btnConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -115,6 +120,13 @@ public class Principal extends javax.swing.JFrame {
         javax.swing.JOptionPane.showMessageDialog(this, "Error al abrir: " + e.getMessage());
     }
     }//GEN-LAST:event_btnAltaAutoActionPerformed
+
+    private void btnConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaActionPerformed
+        ConsultaAutomovil consu = new ConsultaAutomovil();
+        consu.setVisible(true);
+        consu.setLocationRelativeTo(null);
+        
+    }//GEN-LAST:event_btnConsultaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
