@@ -4,17 +4,17 @@
  */
 package com.mycompany.concesionario.igu;
 
+import com.mycompany.concesionario.logica.Automovil;
+import com.mycompany.concesionario.logica.Controladora;
+import java.util.List;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author faacu
- */
 public class ConsultaAutomovil extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ConsultaAutomovil
-     */
+    Controladora control = new Controladora();
+    
     public ConsultaAutomovil() {
         initComponents();
     }
@@ -34,8 +34,8 @@ public class ConsultaAutomovil extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaAutos = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -64,11 +64,16 @@ public class ConsultaAutomovil extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tablaAutos);
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton1.setText("Modificar");
+        btnModificar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnModificar.setText("Modificar");
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton2.setText("Eliminar");
+        btnEliminar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -79,19 +84,19 @@ public class ConsultaAutomovil extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(16, 16, 16))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(47, 47, 47)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -147,11 +152,52 @@ public class ConsultaAutomovil extends javax.swing.JFrame {
         cargarTabla();
     }//GEN-LAST:event_formWindowOpened
 
-
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        
+        //control tabla no vacia, getRowCount traeme la cuenta de las filas (todas las filas)
+        if(tablaAutos.getRowCount() > 0){
+            //validar que se seleccione un registro
+            if(tablaAutos.getSelectedRow() != -1){ //getSelectedRow traeme la fila seleccionada. 
+                                                   //-1 porque las filas comienzan a contarse desde 0, 1, 2
+                                                   //si tengo -1 significa que no tengo nada seleccionado
+            //obtener la id del auto que quiero borrar
+            int idAuto = Integer.parseInt(
+                    String.valueOf(tablaAutos.getValueAt(tablaAutos.getSelectedRow(), 0)));//idAuto es una variable auxiliar
+                                                                          // getValueAt traeme el valor que este en
+                                                                          
+            control.borrarAuto(idAuto);
+            mostrarMensaje("Auto borrado correctamente", "Informacion", "Borrado exitoso");
+            cargarTabla();
+            } else {
+                mostrarMensaje("No selecciono un registro para eliminar", "Error", "Error al eliminar");
+            }    
+            
+        } else {
+        
+           mostrarMensaje("La tabla esta vacia, no se puede eliminar", "Error", "Error al eliminar"); 
+        }
+        
+        
+        
+    }//GEN-LAST:event_btnEliminarActionPerformed
+        //metodo de mostrar mensaje 
+        public void mostrarMensaje (String mensaje, String tipo, String titulo){
+            JOptionPane optionPane = new JOptionPane(mensaje);
+            if(tipo.equals("Info")){
+                optionPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
+            }
+            else if(tipo.equals("Error")){
+                optionPane.setMessageType(JOptionPane.ERROR_MESSAGE);
+            }
+            JDialog dialog = optionPane.createDialog(titulo);
+            dialog.setAlwaysOnTop(true);
+            dialog.setVisible(true);
+        }
+        
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnModificar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -176,20 +222,20 @@ public class ConsultaAutomovil extends javax.swing.JFrame {
         modeloTabla.setColumnIdentifiers(titulos);
         
         //traer a los autos desde la BD
+        List <Automovil> listaAutomoviles = control.traerAutos();
         
+        //setear los datos en la tabla
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        if(listaAutomoviles != null){
+            for(Automovil auto : listaAutomoviles){
+                Object[] objeto = {auto.getId(), auto.getMarca(), auto.getModelo(), 
+                    auto.getKms(), auto.getMotor(), auto.getPatente(), auto.getColor(), auto.getCantidadPuertas()};
+                
+                modeloTabla.addRow(objeto);
+            }
+        }
         
         tablaAutos.setModel(modeloTabla); //agrega lo de las celdas NO editables y los TITULOS (identifiers)
-        
         
     }
 }

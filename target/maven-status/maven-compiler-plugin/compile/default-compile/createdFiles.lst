@@ -7,9 +7,14 @@ com\mycompany\concesionario\persistencia\AutomovilJpaController.class
 com\mycompany\concesionario\igu\AltaAutomoviles$2.class
 com\mycompany\concesionario\logica\Automovil_.class
 com\mycompany\concesionario\persistencia\ControladoraPersistencia.class
+com\mycompany\concesionario\igu\ConsultaAutomovil$1.class
 com\mycompany\concesionario\persistencia\exceptions\IllegalOrphanException.class
+com\mycompany\concesionario\igu\ConsultaAutomovil$2.class
 com\mycompany\concesionario\igu\AltaAutomoviles$1.class
+com\mycompany\concesionario\igu\ConsultaAutomovil.class
 com\mycompany\concesionario\Concesionario.class
 com\mycompany\concesionario\igu\AltaAutomoviles$3.class
 com\mycompany\concesionario\igu\Principal.class
 com\mycompany\concesionario\persistencia\exceptions\NonexistentEntityException.class
+com\mycompany\concesionario\igu\Principal$2.class
+com\mycompany\concesionario\igu\ConsultaAutomovil$3.class
