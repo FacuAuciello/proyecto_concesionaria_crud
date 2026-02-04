@@ -66,6 +66,11 @@ public class ConsultaAutomovil extends javax.swing.JFrame {
 
         btnModificar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnModificar.setText("Modificar");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
 
         btnEliminar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnEliminar.setText("Eliminar");
@@ -180,6 +185,32 @@ public class ConsultaAutomovil extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        
+        //control que la tabla no este vacia
+         if(tablaAutos.getRowCount() > 0){
+            //validar que se seleccione un registro
+            if(tablaAutos.getSelectedRow() != -1){
+            
+            //modificar
+              int idAuto = Integer.parseInt(
+                    String.valueOf(tablaAutos.getValueAt(tablaAutos.getSelectedRow(), 0)));
+              
+              ModifAuto modif = new ModifAuto(idAuto);
+              modif.setVisible(true);
+              modif.setLocation(null);
+              
+              this.dispose(); //cerrando ventana
+                
+            } else {
+                mostrarMensaje("No selecciono un registro para modificar", "Error", "Error al modificar");
+            }  
+         } else {
+                mostrarMensaje("La tabla esta vacia, no se puede modificar", "Error", "Error al modificar");
+         }
+        
+    }//GEN-LAST:event_btnModificarActionPerformed
         //metodo de mostrar mensaje 
         public void mostrarMensaje (String mensaje, String tipo, String titulo){
             JOptionPane optionPane = new JOptionPane(mensaje);
