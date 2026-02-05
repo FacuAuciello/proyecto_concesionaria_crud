@@ -2,6 +2,7 @@
 package com.mycompany.concesionario.igu;
 
 import com.mycompany.concesionario.logica.Controladora;
+import javax.swing.JOptionPane;
 
 public class AltaAutomoviles extends javax.swing.JFrame {
 
@@ -233,11 +234,19 @@ public class AltaAutomoviles extends javax.swing.JFrame {
      int cantidadPuertas = Integer.parseInt(txtCantPuertass.getText());
 
     control.agregarAutomovil(marca, modelo, kms, motor, patente, color, cantidadPuertas);
+    
+    JOptionPane.showMessageDialog(
+        this,
+        "Auto añadido correctamente",
+        "Alta exitosa",
+        JOptionPane.INFORMATION_MESSAGE
+);
+
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-        txtMarca.setText("");
-        txtModelo.setText("");
+        txtMarcaa.setText("");
+        txtModeloo.setText("");
         txtKmss.setText("");
         txtMotorr.setText("");
         txtPatentee.setText("");

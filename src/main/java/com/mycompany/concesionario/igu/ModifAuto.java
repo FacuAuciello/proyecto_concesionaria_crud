@@ -251,8 +251,8 @@ public class ModifAuto extends javax.swing.JFrame {
     }//GEN-LAST:event_btnModificarActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-        txtMarca.setText("");
-        txtModelo.setText("");
+        txtMarcaa.setText("");
+        txtModeloo.setText("");
         txtKmss.setText("");
         txtMotorr.setText("");
         txtPatentee.setText("");
